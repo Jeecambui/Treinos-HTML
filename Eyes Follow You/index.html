@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css">
+		<title>Zoin</title>
+	</head>
+	<body>
+
+
+	<div class="eyes">
+		<div class="eye">
+			<div class="ball"></div>
+		</div>
+
+		<div class="eye">
+			<div class="ball"></div>
+		</div>
+	</div>
+
+
+<script>
+	var balls = document.getElementsByClassName("ball");
+	document.onmousenove = function(){
+		var x = event.clientX * 100 / window.innerWidth + "%";
+		var y = event.clientY * 100 / window.innerHeigth + "%";
+		//event.clientx => Horizontal do Mouse
+		//event.clientY => Vertical do Mouse
+		//window.innerWidth => Pega da altura
+		//window.innerHeigth => Pega do lado
+
+		for(var i=0;i<2;i++){
+			balls[i].style.left = x;
+			balls[i].style.top = y;
+			balls[i].style.transform = "translate(-"+x+",-"+y+")";
+		}
+	}
+</script>
+	</body>	
+</html>
